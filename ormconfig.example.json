@@ -1,0 +1,16 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "",
+    "database": "fancy-db",
+    "entities": [
+      "dist/**/*.entity{.ts,.js}"
+    ],
+    "migrations": [
+      "src/migration/**/*.ts"
+    ],
+    "synchronize": true,
+    "logging": true
+  }
