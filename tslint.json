@@ -14,10 +14,11 @@
     "arrow-parens": false,
     "object-literal-sort-keys": false,
     "eofline": false,
-    "no-trailing-whitespace": true,
+    "no-trailing-whitespace": false,
     "trailing-comma": false,
     "quotemark": false,
-    "object-literal-key-quotes": false
+    "object-literal-key-quotes": false,
+    "prefer-const": false
   },
   "rulesDirectory": []
 }

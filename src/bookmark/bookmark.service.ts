@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@nestjs/common';
 import { InjectRepository} from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Bookmark } from './bookmark.entity';
-import { Musician } from '../musician/musician.entity';
+import { CreateBookmarkDto } from './CreateBookmarkDto';
 
 @Injectable()
 export class BookmarkService {
@@ -11,7 +11,12 @@ export class BookmarkService {
 
   async getBookmark(userId: number): Promise<Bookmark[]> {
     return await this.bookmarkRepository.find({
-      where: [{"id": userId}]
+      select: ["musician"],
+      where: [{"userId": userId}]
     });
+  }
+
+  async createBookmark(createBookmarkDto: CreateBookmarkDto) {
+    return await this.bookmarkRepository.save(createBookmarkDto);
   }
 }
