@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiUseTags } from '@nestjs/swagger';
 import { BookmarkService } from './bookmark.service';
-import { CreateBookmarkDto } from './CreateBookmarkDto';
+import { CreateBookmarkDto } from './dto/create_bookmark.dto';
 
 @ApiUseTags('bookmarks')
 @Controller('bookmark')
@@ -14,7 +14,7 @@ export class BookmarkController {
     return this.service.getBookmark(userId);
   }
 
-  @Post(':id')
+  @Post(':id/')
   create(@Body() createBookmarkDto: CreateBookmarkDto) {
     return this.service.createBookmark(createBookmarkDto);
   }
