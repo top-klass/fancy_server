@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { BookmarkController } from './bookmark/bookmark.controller';
+import { BookmarkModule } from './bookmark/bookmark.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot()],
+  imports: [TypeOrmModule.forRoot(), BookmarkModule],
   controllers: [AppController],
   providers: [AppService],
 })
