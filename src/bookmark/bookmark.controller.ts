@@ -14,7 +14,7 @@ export class BookmarkController {
     return this.service.getBookmark(userId);
   }
 
-  @Post(':id/')
+  @Post(':id')
   create(@Body() createBookmarkDto: CreateBookmarkDto) {
     return this.service.createBookmark(createBookmarkDto);
   }
