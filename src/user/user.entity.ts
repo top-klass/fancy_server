@@ -1,5 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Bookmark } from '../bookmark/bookmark.entity';
+import { UserPointHistory } from '../user-point-history/user-point-history.entity';
 
 @Entity()
 export class User {
@@ -23,4 +24,7 @@ export class User {
 
   @OneToMany(type => Bookmark, bookmark => bookmark.user)
   bookmarks: Bookmark[];
+
+  @OneToMany(type => UserPointHistory, userPointHistory => userPointHistory.user)
+  userPointHistorys: UserPointHistory[];
 }
