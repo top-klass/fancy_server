@@ -6,10 +6,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const options = new DocumentBuilder()
-    .setTitle('Bookmark API')
-    .setDescription('The bookmark API with "Fancy!"')
+    .setTitle('Fancy API')
     .setVersion('1.0')
     .addTag('bookmarks')
+    .addTag("histories")
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, CreateDateColumn } from 'typeorm';
 import { User } from '../user/user.entity';
 import { Musician } from '../musician/musician.entity';
 import { Goods } from '../goods/goods.entity';
@@ -20,7 +20,7 @@ export class UserPointHistory {
   @Column()
   status: boolean;
 
-  @Column()
+  @CreateDateColumn({type: 'timestamp'})
   date: Date;
 
   @Column()
@@ -29,11 +29,11 @@ export class UserPointHistory {
   @Column()
   balance: number;
 
-  @ManyToOne(type => User, user => user.userPointHistorys)
+  @ManyToOne(type => User, user => user.userPointHistories)
   @JoinColumn({name: "userId"})
   user: User;
 
-  @ManyToOne(type => Musician, musician => musician.userPointHistorys)
+  @ManyToOne(type => Musician, musician => musician.userPointHistories)
   @JoinColumn({name: "musicianId"})
   musician: Musician;
 

@@ -26,5 +26,5 @@ export class User {
   bookmarks: Bookmark[];
 
   @OneToMany(type => UserPointHistory, userPointHistory => userPointHistory.user)
-  userPointHistorys: UserPointHistory[];
+  userPointHistories: UserPointHistory[];
 }

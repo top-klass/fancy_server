@@ -15,7 +15,7 @@ export class Musician {
   bookmarks: Bookmark[];
 
   @OneToMany(type => UserPointHistory, userPointHistory => userPointHistory.musician)
-  userPointHistorys: UserPointHistory[];
+  userPointHistories: UserPointHistory[];
 
   @OneToMany(type => Goods, goods => goods.musician)
   goods: Goods[];
